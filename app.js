@@ -14,10 +14,14 @@ const classListProperty = {
 // webpage loader 
 const loader = () => {
     loaderEl.style.animation = "toLoaderDown ease-in 1s 1s";
+    for (let i = 0; i < classListProperty.rotation.length; i++) {
+        sliderDonut(classListProperty.rotation[i])
+    }
     setTimeout(() => {
         loaderEl.style.display = "none";
     }, 1950)
 }
+window.onload = loader;
 
 const sliderDonut = (index) => {
     slider.style.transform = `rotate(${index}deg)`
@@ -35,7 +39,7 @@ const sliderDonut = (index) => {
         bottomLeftBg.style.background = classListProperty.bgGreen[1];
     }
 }
-window.onload = loader();
+
 
 
 
